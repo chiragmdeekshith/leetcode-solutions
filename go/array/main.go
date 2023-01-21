@@ -3,11 +3,28 @@ package main
 import "fmt"
 
 func main() {
+	minStack := Constructor()
+	fmt.Println(minStack)
+	fmt.Println("Done!")
+}
+
+/*
+func main() {
+	s := "{}[[()]"
+	result := isValid(s)
+	fmt.Println(result)
+	fmt.Println("Done!")
+}
+*/
+
+/*
+func main() {
 	operations := []string{"5", "2", "C", "D", "+"}
 	result := calPoints(operations)
 	fmt.Println(result)
 	fmt.Println("Done!")
 }
+*/
 
 /*
 func main() {
