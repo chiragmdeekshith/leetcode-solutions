@@ -21,6 +21,39 @@ func createNewLinkedList(input []int) *ListNode {
 	return head.Next
 }
 
+func printDLL(list *MyLinkedList) {
+	cur := list.left
+	fmt.Println("Vals")
+	for cur != nil {
+		fmt.Print(cur.value)
+		cur = cur.next
+	}
+	fmt.Println("")
+
+	fmt.Println("")
+}
+
+func main() {
+	fmt.Println("start")
+	myLinkedList := Constructor()
+	printDLL(&myLinkedList)
+	myLinkedList.AddAtHead(1)
+	printDLL(&myLinkedList)
+	myLinkedList.AddAtTail(3)
+	printDLL(&myLinkedList)
+	myLinkedList.AddAtIndex(1, 2)
+	printDLL(&myLinkedList)
+	fmt.Println("GET- ", myLinkedList.Get(1))
+	fmt.Println("")
+	printDLL(&myLinkedList)
+	myLinkedList.DeleteAtIndex(1)
+	printDLL(&myLinkedList)
+	fmt.Println("GET- ", myLinkedList.Get(1))
+	fmt.Println("")
+	printDLL(&myLinkedList)
+}
+
+/*
 func main() {
 	fmt.Println("start")
 
@@ -34,6 +67,7 @@ func main() {
 	}
 	fmt.Println("end")
 }
+*/
 
 /*
 func main() {
