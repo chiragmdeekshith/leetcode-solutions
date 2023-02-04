@@ -12,7 +12,7 @@ type DLLNode struct {
 	next  *DLLNode
 }
 
-func Constructor() MyLinkedList {
+func MyLinkedListConstructor() MyLinkedList {
 	list := MyLinkedList{}
 
 	left := &DLLNode{}

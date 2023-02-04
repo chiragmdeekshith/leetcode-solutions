@@ -33,9 +33,55 @@ func printDLL(list *MyLinkedList) {
 	fmt.Println("")
 }
 
+func printBrowserHistoryList(bh *BrowserHistory) {
+	cur := bh.head.next
+	fmt.Println("URLs")
+	for cur != bh.tail {
+		fmt.Print(cur.url, " ")
+		cur = cur.next
+	}
+	fmt.Println("     Current-", bh.currentPage.url)
+}
+
 func main() {
 	fmt.Println("start")
-	myLinkedList := Constructor()
+
+	myBrowserHistory := Constructor("leetcode.com")
+	printBrowserHistoryList(&myBrowserHistory)
+	myBrowserHistory.Visit("google.com")
+	printBrowserHistoryList(&myBrowserHistory)
+
+	myBrowserHistory.Visit("facebook.com")
+	printBrowserHistoryList(&myBrowserHistory)
+
+	myBrowserHistory.Visit("youtube.com")
+	printBrowserHistoryList(&myBrowserHistory)
+
+	myBrowserHistory.Back(1)
+	printBrowserHistoryList(&myBrowserHistory)
+
+	myBrowserHistory.Forward(1)
+	printBrowserHistoryList(&myBrowserHistory)
+
+	myBrowserHistory.Visit("linkedin.com")
+	printBrowserHistoryList(&myBrowserHistory)
+
+	myBrowserHistory.Forward(2)
+	printBrowserHistoryList(&myBrowserHistory)
+
+	myBrowserHistory.Back(2)
+	printBrowserHistoryList(&myBrowserHistory)
+
+	myBrowserHistory.Back(7)
+	printBrowserHistoryList(&myBrowserHistory)
+
+	fmt.Println("end")
+}
+
+/*
+func main() {
+	fmt.Println("start")
+	myLinkedList := MyLinkedListConstructor()
 	printDLL(&myLinkedList)
 	myLinkedList.AddAtHead(1)
 	printDLL(&myLinkedList)
@@ -52,6 +98,7 @@ func main() {
 	fmt.Println("")
 	printDLL(&myLinkedList)
 }
+*/
 
 /*
 func main() {
